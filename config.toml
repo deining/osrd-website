@@ -10,8 +10,12 @@ enableMissingTranslationPlaceholders = true
 
 enableRobotsTXT = true
 
-# Hugo allows theme composition (and inheritance). The precedence is from left to right.
-theme = ["docsy"]
+[module]
+proxy = "direct"
+[[module.imports]]
+path = "github.com/google/docsy"
+[[module.imports]]
+path = "github.com/google/docsy/dependencies"
 
 # Will give values to .Lastmod etc.
 enableGitInfo = false
@@ -95,8 +99,8 @@ weight = 2
 # Everything below this are Site Params
 
 # Comment out if you don't want the "print entire section" link enabled.
-[outputs]
-section = ["HTML", "print", "RSS"]
+#[outputs]
+#section = ["HTML", "print", "RSS"]
 
 [params]
 copyright = "DGEX Solutions"
